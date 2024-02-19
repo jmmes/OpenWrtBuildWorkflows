@@ -20,11 +20,11 @@ on:
     inputs:
       force-build:
         description: "Build new firmware anyway"
-        required: false
+        required: true
         default: "false"
       ssh:
         description: "SSH connection to Actions"
-        required: false
+        required: true
         default: "false"
 # Uncomment the following to run regularly. Note that the cron expression here does not contain seconds.
 #  schedule:
