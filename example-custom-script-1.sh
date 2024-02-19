@@ -16,10 +16,12 @@
 # This is followed by some editing examples.
 # # Clear the feeds.conf.default and append the feed sources you need one by one:
 #cat /dev/null > a.txt
-#echo 'src-git-full packages https://git.openwrt.org/feed/packages.git;openwrt-22.03' >> feeds.conf.default
-#echo 'src-git-full luci https://git.openwrt.org/project/luci.git;openwrt-22.03' >> feeds.conf.default
-#echo 'src-git-full routing https://git.openwrt.org/feed/routing.git;openwrt-22.03' >> feeds.conf.default
-#echo 'src-git-full telephony https://git.openwrt.org/feed/telephony.git;openwrt-22.03' >> feeds.conf.default
+echo 'src-git-full packages https://git.openwrt.org/feed/packages.git;openwrt-23.05' >> feeds.conf.default
+echo 'src-git-full luci https://git.openwrt.org/project/luci.git;openwrt-23.05' >> feeds.conf.default
+echo 'src-git-full routing https://git.openwrt.org/feed/routing.git;openwrt-23.05' >> feeds.conf.default
+echo 'src-git-full telephony https://git.openwrt.org/feed/telephony.git;openwrt-23.05' >> feeds.conf.default
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall2.git' >> feeds.conf.default
+echo 'src-git PWpackages https://github.com/xiaorouji/openwrt-passwall-packages.git' >> feeds.conf.default
 # # Replace a feed source with what you want:
 #sed '/feeds-name/'d feeds.conf.default
 #echo 'method feed-name path/URL' >> feeds.conf.default
