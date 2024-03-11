@@ -143,12 +143,6 @@ jobs:
 
       - name: Update feeds
         run: cd openwrt/ && ./scripts/feeds update -a
-
-      - name: Install golang
-        run: cd openwrt && rm -rf feeds/packages/lang/golang && svn co https://github.com/openwrt/packages/branches/master/lang/golang feeds/packages/lang/golang
-      
-      - name: Download package
-        id: package
       
       - name: Install feeds
         run: cd openwrt/ && ./scripts/feeds install -a
@@ -171,6 +165,9 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
+      - name: Install golang
+        run: cd openwrt && rm -rf feeds/packages/lang/golang && svn co https://github.com/openwrt/packages/branches/master/lang/golang feeds/packages/lang/golang
+      
       - name: Download packages
         id: download-packages
         run: |
