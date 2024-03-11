@@ -146,7 +146,8 @@ jobs:
 
       - name: Install golang
         run: pushd feeds/packages/lang
-             rm -fr golang && svn co https://github.com/openwrt/packages/trunk/lang/golang
+             rm -fr golang
+             cp -rf $GITHUB_WORKSPACE/general/golang feeds/packages/lang/golang
              popd
       
       - name: Install feeds
