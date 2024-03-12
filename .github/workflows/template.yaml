@@ -166,8 +166,11 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
       - name: Install golang
-        run: cd openwrt && rm -rf feeds/packages/lang/golang && svn co https://github.com/openwrt/packages/branches/master/lang/golang feeds/packages/lang/golang
-      
+        run: git clone -b master --single-branch https://github.com/openwrt/packages.git packages_master
+          rm -rf ./feeds/packages/lang/golang
+          mv ./packages_master/lang/golang ./feeds/packages/lang
+          rm -rf ./packages_master
+
       - name: Download packages
         id: download-packages
         run: |
