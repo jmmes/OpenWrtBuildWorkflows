@@ -165,13 +165,6 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-      - name: Install golang
-        run:  |
-          git clone [<-b master>] [--] <https://github.com/openwrt/packages.git> [<packages_master>] 
-          rm -rf ./feeds/packages/lang/golang
-          mv ./packages_master/lang/golang ./feeds/packages/lang
-          rm -rf ./packages_master
-
       - name: Download packages
         id: download-packages
         run: |
